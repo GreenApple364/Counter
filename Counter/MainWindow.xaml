@@ -1,0 +1,24 @@
+﻿<Window x:Class="Counter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Counter"
+        xmlns:a="clr-namespace:Counter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="196" Width="144" HorizontalAlignment="Center">
+    <Window.DataContext>
+        <a:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="counter" Grid.Column="0" TextWrapping="Wrap" Text="{Binding Count}" VerticalAlignment="Center"/>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <Button x:Name="plus" Content="▲" Command="{Binding Plus}" />
+            <Button x:Name="minus" Content="▼" Command="{Binding Minus}" />
+        </StackPanel>
+    </Grid>
+</Window>
