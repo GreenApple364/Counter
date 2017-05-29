@@ -23,8 +23,7 @@ namespace Counter
 
         public int PlusOne(int current)
         {
-            current++;
-            return current;
+            return ++current;
 
         }
 
